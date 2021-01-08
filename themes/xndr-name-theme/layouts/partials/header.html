@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="nav-scroller mb-2 py-2 my-2">
+        <nav class="nav d-flex justify-content-start">
+            {{ range .Site.Menus.main }}
+            {{ if .Weight }}
+            {{ $text := print .Name | safeHTML }}
+            <a class="me-3 link-menu" href="{{ .URL }}">{{ $text }}</a>
+            {{ end }}
+            {{ end }}
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+baseURL = "http://xndr78.github.io/"
+title = "/home/xndr_78"
+languageCode = "en-us"
+publishDir = "docs"
+googleAnalytics = "UA-9638300-1"
+sectionPagesMenu = "main"
+theme = "xndr-name-theme"
+[menu]
+    [[menu.main]]
+        name = "home"
+        url = "/"
+        weight = 1
+    [[menu.main]]
+        name = "about me"
+        url = "/about/"
+        weight = 100

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <main class="container">
+        {{- block "main" . }}{{- end }}
+        </main><!-- /.container -->
+        {{- partial "footer.html" . -}}
+        {{- partial "script.html" . -}}
+        {{ template "_internal/google_analytics_async.html" . }}
+    </body>
+</html>

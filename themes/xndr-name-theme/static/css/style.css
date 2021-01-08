@@ -1,0 +1,37 @@
+body {
+    background-color: #dbdbdb;
+}
+
+a {
+    text-decoration: underline;
+}
+
+.bg-hehe {
+    background-image: url("/hehe.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
+.block-intro p {
+    font-size: 1.2em;
+    font-weight: 200;
+    margin: 0;
+}
+
+.link-menu {
+    color: #6c757d;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.link-menu:hover, .link-menu:focus {
+    color: #2630c1;
+}
+
+a {
+    color: #6c757d;
+}
+
+a:hover, a:focus {
+    color: #2b2f32;
+}
