@@ -13,4 +13,4 @@ My name is Aleksandr Sobolev, I'm a software engineer from Saint Petersburg, Rus
 ### Social
 [Instagram](https://instagram.com/xndr_78) — boring real life stuff and ~~shitposting~~ photos with questionable artistic value.
 
-[Twitter](https://twitter.com/xndr_78) — mainly retweets and instagram feed mirroring via [ifttt](https://ifttt.com).
+[Twitter](https://twitter.com/xndr_78) — mostly retweets and instagram feed mirroring via [ifttt](https://ifttt.com).
