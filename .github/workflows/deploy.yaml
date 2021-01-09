@@ -1,4 +1,4 @@
-name: hugo-remote
+name: deploy to GitHub Pages repo
 
 on:
   push:

@@ -2,4 +2,4 @@
 
 Next iteration of my personal homepage and a playground, because every developer needs one.
 
-Built with [hugo](https://gohugo.io/) and automatically deployed to GitHub Pages with a [slightly](https://github.com/xndr78/hugo-remote/tree/feature/custom-commit-message) adjusted [hugo-remote](https://github.com/victoriadrake/hugo-remote) action.
+Built with [Hugo](https://gohugo.io/), sources are here: [xndr78/homepage](https://github.com/xndr78/homepage)
