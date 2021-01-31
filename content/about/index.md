@@ -8,7 +8,7 @@ layout: about
 My name is Aleksandr Sobolev, I'm a software engineer from Saint Petersburg, Russia.
 
 ### Contact
-[Telegram](https://t.me/xndr_78) is the best way to do it. I don't check [email](mailto:contact@xndr.name) very often, but you can still try.
+[Telegram](https://t.me/xndr_78) is the best way to do it.
 
 ### Social
 [Instagram](https://instagram.com/xndr_78) — boring real life stuff and ~~shitposting~~ photos with questionable artistic value.
