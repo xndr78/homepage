@@ -1,0 +1,7 @@
+{{ define "main" }}
+<h1>DEFAULT SINGLE</h1>
+<h1>{{ .Title }}</h1>
+{{ partial "post-metadata.html" . }}
+<br><br>
+{{ .Content }}
+{{ end }}

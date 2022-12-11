@@ -1,0 +1,43 @@
+body {
+    background-color: #dbdbdb;
+    /*background-image: url("/hehe.png");*/
+    /*background-position: left top;*/
+    /*background-repeat: repeat-y;*/
+}
+
+a {
+    text-decoration: underline;
+}
+
+.bg-hehe {
+    border: 1px #2b2f32 solid;
+}
+
+.block-intro p {
+    font-size: 1.2em;
+    font-weight: 200;
+    padding-top: 1.2em;
+    margin: 0;
+    color: #2b2f32;
+    font-family: monospace;
+}
+
+.link-menu {
+    color: #6c757d;
+    font-size: 1em;
+    /*text-transform: uppercase;*/
+    text-decoration: none;
+    font-family: monospace;
+}
+
+.link-menu:hover, .link-menu:focus {
+    color: #2630c1;
+}
+
+a {
+    color: #6c757d;
+}
+
+a:hover, a:focus {
+    color: #2b2f32;
+}
