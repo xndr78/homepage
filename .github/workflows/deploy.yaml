@@ -21,6 +21,6 @@ jobs:
       - name: Build and deploy
         env:
           HUGO_ARGS: '--minify --cleanDestinationDir'
-        uses: xndr78/hugo-remote@feature/custom-commit-message
+        uses: victoriadrake/hugo-remote@master
         with:
           commit_message: build prepared o7
