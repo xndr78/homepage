@@ -6,7 +6,7 @@ Hi.
 
 My name is Aleksandr Sobolev, and this is my fabulous homepage.
 
-I'm a software engineer from Saint Petersburg, Russia, now living abroad. 
+I'm a software engineer from Saint Petersburg, Russia, now hgggliving abroad. 
 
 I love coding, games and memes.
 
