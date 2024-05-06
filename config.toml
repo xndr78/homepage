@@ -3,7 +3,6 @@ title = "/home/xndr_78"
 languageCode = "en-us"
 googleAnalytics = "UA-9638300-1"
 sectionPagesMenu = "main"
-theme = "xndr-name-theme"
 [menu]
     [[menu.main]]
         name = "/home/xndr_78"

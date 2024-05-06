@@ -1,15 +1,9 @@
----
-title: "about me"
-date: 2021-01-06T17:44:06+03:00
----
-Hi.
+# Hi there. My name is Aleksandr Sobolev, and this is a little website I've made.
 
-My name is Aleksandr Sobolev, and this is my fabulous homepage.
-
-I'm a software engineer from Saint Petersburg, Russia, living abroad right now. 
+I'm a software engineer from Saint Petersburg, Russia, living abroad for now. 
 
 I love coding, games and memes.
 
-Have a nice day.
-
 Also, хуй войне.
+
+Have a nice day.
