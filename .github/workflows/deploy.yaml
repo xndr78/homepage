@@ -1,5 +1,4 @@
 name: deploy to GitHub Pages
-
 on:
   push:
     branches:
@@ -7,16 +6,18 @@ on:
 
 jobs:
   build:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Check out master
+      - name: Checkout code
         uses: actions/checkout@v1
-      - name: Build and deploy
+
+      - name: Deploy the site
         uses: benmatselby/hugo-deploy-gh-pages@main
-          env:
-            HUGO_VERSION: 0.127.0
-            TARGET_REPO: xndr78/xndr.github.io
-            TARGET_BRANCH: master
-            TOKEN: ${{ secrets.TOKEN }}
-            HUGO_ARGS: '--minify --cleanDestinationDir'
-            CNAME: xndr.name
+        env:
+          HUGO_VERSION: 0.127.0
+          TARGET_REPO: xndr78/xndr.github.io
+          TARGET_BRANCH: master
+          TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '--minify --cleanDestinationDir'
+          CNAME: xndr.name
