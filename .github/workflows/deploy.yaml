@@ -16,7 +16,6 @@ jobs:
         uses: benmatselby/hugo-deploy-gh-pages@main
         env:
           HUGO_VERSION: 0.127.0
-          HUGO_EXTENDED: true
           TARGET_REPO: xndr78/xndr78.github.io
           TARGET_BRANCH: master
           TOKEN: ${{ secrets.TOKEN }}
