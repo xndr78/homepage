@@ -1,26 +1,22 @@
-name: deploy to GitHub Pages repo
+name: deploy to GitHub Pages
 
 on:
   push:
     branches:
       - master
 
-env:
-  REMOTE: xndr78/xndr78.github.io.git
-  DEST: public
-  TOKEN: ${{ secrets.TOKEN }}
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out master
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
       - name: Build and deploy
-        env:
-          HUGO_ARGS: '--minify --cleanDestinationDir'
-        uses: xndr78/hugo-remote@master
-        with:
-          commit_message: build prepared o7
+        uses: benmatselby/hugo-deploy-gh-pages@main
+          env:
+            HUGO_VERSION: 0.127.0
+            TARGET_REPO: xndr78/xndr.github.io
+            TARGET_BRANCH: master
+            TOKEN: ${{ secrets.TOKEN }}
+            HUGO_ARGS: '--minify --cleanDestinationDir'
+            CNAME: xndr.name
