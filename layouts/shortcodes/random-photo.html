@@ -1,0 +1,28 @@
+{{- $dir := "static/photos" -}}
+{{- $locations := .Site.Data.photos -}}
+{{- $photos := slice -}}
+{{- range (readDir $dir) -}}
+    {{- $ext := lower (path.Ext .Name) -}}
+    {{- if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") -}}
+        {{- $loc := index $locations .Name -}}
+        {{- $photos = $photos | append (dict "name" .Name "location" $loc) -}}
+    {{- end -}}
+{{- end -}}
+{{- if gt (len $photos) 0 -}}
+    <p id="random-photo-text" class="block-intro-photo-text">Here is a photo I took somewhere:</p>
+    <div id="random-photo-container">
+        <script>
+            (function () {
+                const photos = [{{ range $i, $p := $photos }}{{ if $i }}, {{ end }}{"name": "{{ $p.name }}", "location": {{ with $p.location }}"{{ . }}"{{ else }}null{{ end }}}{{ end }}];
+                const pick = photos[Math.floor(Math.random() * photos.length)];
+                if (pick.location) {
+                    document.getElementById('random-photo-text').textContent = 'Here is a photo I took ' + pick.location + ':';
+                }
+                document.write('<img class="random-photo" src="/photos/' + pick.name + '" alt="random photo">');
+            })();
+        </script>
+        <noscript>
+            <img class="random-photo" src="/photos/{{ (index $photos 0).name }}" alt="random photo">
+        </noscript>
+    </div>
+{{- end -}}

@@ -9,6 +9,7 @@
                 background-color: #dbdbdb;
                 padding-left: 1em;
                 padding-right: 1em;
+                padding-bottom: 2em;
             }
 
             a {
@@ -46,6 +47,54 @@
             main h1, main h2 {
                 font-family: monospace;
                 color: #2b2f32;
+            }
+
+            .block-intro-photo-text {
+                font-size: 1.2em;
+                font-weight: 200;
+                padding-top: 1.2em;
+                padding-bottom: 0.6em;
+                margin: 0;
+                color: #2b2f32;
+                font-family: monospace;
+            }
+
+            .random-photo {
+                max-width: 100%;
+                height: auto;
+                max-height: 80vh;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: #1a1d21;
+                }
+                .block-intro p,
+                .block-intro-photo-text,
+                main h1, main h2 {
+                    color: #d1d5da;
+                }
+                .link-menu, a {
+                    color: #8b949e;
+                }
+                .link-menu:hover, .link-menu:focus {
+                    color: #7b88ff;
+                }
+                a:hover, a:focus {
+                    color: #d1d5da;
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                #random-photo-container {
+                    width: 100vw;
+                    margin-left: calc(-50vw + 50%);
+                }
+                .random-photo {
+                    width: 100%;
+                    max-width: none;
+                    max-height: none;
+                }
             }
         </style>
         {{ $title := print .Site.Title " | " .Title }}

@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Deploy the site
-        uses: benmatselby/hugo-deploy-gh-pages@main
+        uses: benmatselby/hugo-deploy-gh-pages@v2
         env:
           HUGO_VERSION: 0.127.0
           TARGET_REPO: xndr78/xndr78.github.io
