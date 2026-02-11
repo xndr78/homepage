@@ -1,0 +1,7 @@
+{{ $items := .Site.Data.platinum }}
+{{ $total := len $items }}
+<ol class="platinum-list" start="{{ $total }}" reversed>
+  {{ range $items }}
+  <li>{{ .name }} <span class="platinum-date">{{ .date }}</span></li>
+  {{ end }}
+</ol>

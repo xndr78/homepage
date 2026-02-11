@@ -1,9 +1,16 @@
-.PHONY: serve build optimize-photos help
+ENV_FILE_PATH ?= .env
+ifneq ($(wildcard ${ENV_FILE_PATH}),)
+	include $(ENV_FILE_PATH)
+endif
+
+.PHONY: serve build optimize-photos platinum platinum-archive platinum-og help
 
 serve: ## Start Hugo in serve mode
 	@hugo serve -D
 
 build: ## Delete old build and make a new one
+	@$(MAKE) optimize-photos
+	@$(MAKE) fetch-data-platinum
 	@hugo --minify --cleanDestinationDir
 
 optimize-photos: ## Optimize photos for web (resize, strip EXIF, rename to UUIDv7)
@@ -34,6 +41,10 @@ optimize-photos: ## Optimize photos for web (resize, strip EXIF, rename to UUIDv
 		python3 -c "import json;p='data/photos.json';d=json.load(open(p));d['$$new_file']=d.pop('$$base',None);f=open(p,'w');json.dump(d,f,indent=2);f.write(chr(10));f.close()"; \
 	done
 	@echo "Done."
+
+fetch-data-platinum: ## Fetch data and static related to platinum
+	@cp $(PLATINUM_DATA_LOCATION)/platinum.json ./data/platinum.json
+	@cp $(PLATINUM_DATA_LOCATION)/platinum_og.png ./static/platinum_og.png
 
 help: ## Show this help
 	@grep -Ei '^[a-z-]+\:\s##\s' Makefile | sort | awk 'BEGIN {FS = ": ## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'

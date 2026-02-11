@@ -65,14 +65,33 @@
                 max-height: 80vh;
             }
 
+            .platinum-list {
+                font-family: monospace;
+                color: #2b2f32;
+                font-size: 1.2em;
+                font-weight: 200;
+                padding-top: 0.5em;
+                padding-left: 0;
+                list-style-position: inside;
+            }
+
+            .platinum-date {
+                font-size: 0.7em;
+                color: #6c757d;
+            }
+
             @media (prefers-color-scheme: dark) {
                 body {
                     background-color: #1a1d21;
                 }
                 .block-intro p,
                 .block-intro-photo-text,
-                main h1, main h2 {
+                main h1, main h2,
+                .platinum-list {
                     color: #d1d5da;
+                }
+                .platinum-date {
+                    color: #8b949e;
                 }
                 .link-menu, a {
                     color: #8b949e;
@@ -97,9 +116,15 @@
                 }
             }
         </style>
-        {{ $title := print .Site.Title " | " .Title }}
+        {{ $title := print .Site.Title "/" .Title }}
         {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
         <title>{{ $title }}</title>
+        <meta property="og:title" content="{{ $title }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ .Permalink }}">
+        {{ with .Params.og_image }}
+        <meta property="og:image" content="{{ . | absURL }}">
+        {{ end }}
     </head>
     <body>
         <div class="container">

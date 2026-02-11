@@ -2,3 +2,5 @@ baseURL = "https://xndr.name/"
 languageCode = "en-us"
 title = "/home/xndr_78"
 googleAnalytics = "UA-9638300-1"
+
+[taxonomies]
