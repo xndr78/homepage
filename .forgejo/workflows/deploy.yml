@@ -35,7 +35,6 @@ jobs:
           git clone https://xndr78:${TOKEN}@github.com/xndr78/xndr78.github.io.git /tmp/gh-pages
           cp -r public/. /tmp/gh-pages/
 
-          # preserve CNAME if it exists, or write it fresh
           echo "xndr.name" > /tmp/gh-pages/CNAME
 
           cd /tmp/gh-pages
