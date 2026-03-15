@@ -3,7 +3,7 @@
 {{- $photos := slice -}}
 {{- range (readDir $dir) -}}
     {{- $ext := lower (path.Ext .Name) -}}
-    {{- if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") -}}
+    {{- if or (eq $ext ".jpg") (eq $ext ".png") -}}
         {{- $loc := index $locations .Name -}}
         {{- $photos = $photos | append (dict "name" .Name "location" $loc) -}}
     {{- end -}}
@@ -13,7 +13,7 @@
     <div id="random-photo-container">
         <script>
             (function () {
-                const photos = [{{ range $i, $p := $photos }}{{ if $i }}, {{ end }}{"name": "{{ $p.name }}", "location": {{ with $p.location }}"{{ . }}"{{ else }}null{{ end }}}{{ end }}];
+                const photos = {{ $photos | jsonify | safeJS }};
                 const pick = photos[Math.floor(Math.random() * photos.length)];
                 if (pick.location) {
                     document.getElementById('random-photo-text').textContent = 'Here is a photo I took ' + pick.location + ':';

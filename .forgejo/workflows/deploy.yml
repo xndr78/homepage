@@ -1,0 +1,44 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: debian
+    container:
+      image: node:20-bookworm
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Install Hugo
+        run: |
+          curl -L https://github.com/gohugoio/hugo/releases/download/v${{ vars.HUGO_VERSION }}/hugo_extended_${{ vars.HUGO_VERSION }}_linux-amd64.tar.gz \
+            | tar -xz -C /usr/local/bin hugo
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages repo
+        env:
+          TOKEN: ${{ secrets.GHP_DEPLOY_TOKEN }}
+        run: |
+          git config --global user.email "xndr78@users.noreply.github.com"
+          git config --global user.name "xndr78"
+
+          git clone https://xndr78:${TOKEN}@github.com/xndr78/xndr78.github.io.git /tmp/gh-pages
+          cp -r public/. /tmp/gh-pages/
+
+          # preserve CNAME if it exists, or write it fresh
+          echo "xndr.name" > /tmp/gh-pages/CNAME
+
+          cd /tmp/gh-pages
+          git add -A
+          git diff --cached --quiet || git commit -m "auto deploy: ${{ github.sha }}"
+          git push origin master
