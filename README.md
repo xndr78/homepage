@@ -1,5 +1,3 @@
-# My fabulous homepage
+# [xndr.name](https://xndr.name) sources
 
-Source files for my [Hugo](https://gohugo.io/ "Hugo website")-powered static homepage. 
-
-It's here: https://xndr.name
+Powered by [Hugo](https://gohugo.io/ "Hugo website")
